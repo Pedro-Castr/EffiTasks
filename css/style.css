@@ -21,7 +21,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 70px;
+    height: 80px;
     color: var(--azulClaro);
 }
 
@@ -33,16 +33,19 @@ div.add-task {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
     padding: 10px;
+    margin-bottom: 30px;
 }
 
 div.add-task > input[type=text] {
     padding: 8px;
-    width: 350px;
+    width: 95%;
+    height: 45px;
     border-style: none;
     border-radius: 12px;
     outline: none;
+    font-size: 1em;
 }
 
 #btn-new-task {
@@ -80,12 +83,11 @@ div.add-task > input[type=text] {
     justify-content: space-between;
     width: 100%;
     margin-bottom: 20px;
-    transition: ease-in-out, .1s;
+    transition: ease, .1s;
 }
 
 .item-lista:hover {
-    height: 42px;
-    width: 102%;
+    width: 101%;
 }
 
 .item-lista > span {
@@ -94,18 +96,17 @@ div.add-task > input[type=text] {
     justify-content: space-between;
     background-color: var(--branco);
     width: 92%;
-    height: 40px;
+    height: 42px;
     border-radius: 8px 0 0 8px;
     padding: 0 8px;
 }
 
 .btn-done {
     background-color: var(--azulClaro);
-    height: 40px;
+    height: 42px;
     width: 8%;
     border-radius: 0 8px 8px 0;
     color: var(--branco);
     border: none;
     cursor: pointer;
 }
-
