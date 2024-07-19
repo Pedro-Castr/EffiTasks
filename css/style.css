@@ -13,8 +13,11 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     background-color: var(--preto);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 100%;
 }
 
 header {
@@ -109,4 +112,18 @@ div.add-task > input[type=text] {
     color: var(--branco);
     border: none;
     cursor: pointer;
+}
+
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--branco);
+    font-size: 1em;
+}
+
+footer > p > span {
+    font-style: italic;
+    font-size: 1.1em;
 }
