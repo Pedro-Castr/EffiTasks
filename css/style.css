@@ -5,7 +5,8 @@
 :root {
     --preto: #111010;
     --branco: #f5f5f5;
-    --azulClaro: #48cae4;
+    --azulClaro: #49cae4;
+    --cinza: #b9b8b8;
 }
 
 * {
@@ -57,19 +58,19 @@ div.add-task {
 .input {
     width: 100%;
     box-sizing: border-box;
-    border: solid 1.5px #9e9e9e;
+    border: solid 1.5px var(--cinza);
     border-radius: 1rem;
     background: none;
     padding: 1rem;
     font-size: 1rem;
-    color: #f5f5f5;
+    color: var(--branco);
     transition: border 150ms cubic-bezier(0.4,0,0.2,1);
 }
 
 .user-label {
     position: absolute;
     left: 15px;
-    color: #e8e8e8;
+    color: var(--cinza);
     pointer-events: none;
     transform: translateY(1rem);
     transition: transform 150ms cubic-bezier(0.4,0,0.2,1), color 150ms cubic-bezier(0.4,0,0.2,1);
@@ -87,27 +88,55 @@ div.add-task {
     color: var(--azulClaro);
 }
 
-#btn-new-task {
+/* Botão add task */
+
+.btn-add-task {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--azulClaro);
-    color: var(--branco);
-    outline: none;
-    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
     border: none;
-    font-size: 2em;
-    padding: 1rem;
-    width: 45px;
-    height: 45px;
-    transition: background-color 0.3s;
-    margin-left: 1rem;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
 }
 
-#btn-new-task:hover {
-    cursor: pointer;
-    background-color: #338ea0;
+.btn-add-task::after {
+    position: absolute;
+    font-size: 15px;
+    opacity: 0;
+    transition: .2s linear;
+    top: 115%;
 }
+
+.icon {
+    width: 30px;
+    height: 30px;
+    transition: .2s linear;
+}
+
+.icon path {
+    fill: var(--cinza);
+    transition: .2s linear;
+}
+
+.btn-add-task:hover > .icon {
+    transform: scale(1.2);
+}
+
+.btn-add-task:hover > .icon path {
+    fill: var(--azulClaro);
+}
+
+.btn-add-task:hover::after {
+    visibility: visible;
+    opacity: 1;
+    top: 105%;
+}
+
+/* Configurações da lista */  
 
 #lista {
     display: flex;
