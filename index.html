@@ -13,7 +13,16 @@
 
     <main>
         <div class="add-task">
-            <input type="text" id="new-task" placeholder="Digite sua tarefa">
+            <div class="input-add-task">
+                <input required type="text" name="nome-tarefa" autocomplete="off" class="input nome-tarefa">
+                <label class="user-label">Nome da Tarefa</label>
+            </div>
+
+            <div class="input-add-task">
+                <input required type="text" name="data-tarefa" autocomplete="off" class="input data-tarefa">
+                <label class="user-label">Data</label>
+            </div>
+
             <button id="btn-new-task" title="Clique para adicionar">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>

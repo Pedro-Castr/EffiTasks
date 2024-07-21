@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+/* Configurações gerais */
+
 :root {
     --preto: #111010;
     --branco: #f5f5f5;
@@ -20,6 +22,8 @@ body {
     height: 100%;
 }
 
+/* Configurações do header */
+
 header {
     display: flex;
     align-items: center;
@@ -32,6 +36,8 @@ header > h1 > span {
     color: var(--branco);
 }
 
+/* Configurações do input de task */
+
 div.add-task {
     display: flex;
     align-items: center;
@@ -39,16 +45,46 @@ div.add-task {
     gap: 1rem;
     padding: 10px;
     margin-bottom: 30px;
+    flex-wrap: wrap;
 }
 
-div.add-task > input[type=text] {
-    padding: 8px;
-    width: 95%;
-    height: 45px;
-    border-style: none;
-    border-radius: 12px;
+.input-add-task {
+    position: relative;
+    flex: 1;
+    min-width: 100px;
+}
+
+.input {
+    width: 100%;
+    box-sizing: border-box;
+    border: solid 1.5px #9e9e9e;
+    border-radius: 1rem;
+    background: none;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #f5f5f5;
+    transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+}
+
+.user-label {
+    position: absolute;
+    left: 15px;
+    color: #e8e8e8;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: transform 150ms cubic-bezier(0.4,0,0.2,1), color 150ms cubic-bezier(0.4,0,0.2,1);
+}
+
+.input:focus, .input:valid {
     outline: none;
-    font-size: 1em;
+    border: 1.5px solid var(--azulClaro);
+}
+
+.input:focus ~ .user-label, .input:valid ~ .user-label {
+    transform: translateY(-50%) scale(0.8);
+    background-color: var(--preto);
+    padding: 0 .2em;
+    color: var(--azulClaro);
 }
 
 #btn-new-task {
@@ -64,7 +100,8 @@ div.add-task > input[type=text] {
     padding: 1rem;
     width: 45px;
     height: 45px;
-    transition: .3s;
+    transition: background-color 0.3s;
+    margin-left: 1rem;
 }
 
 #btn-new-task:hover {
@@ -127,3 +164,4 @@ footer > p > span {
     font-style: italic;
     font-size: 1.1em;
 }
+
